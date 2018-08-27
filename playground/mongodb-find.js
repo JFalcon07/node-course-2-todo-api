@@ -8,11 +8,11 @@ MongoClient.connect(url, { useNewUrlParser: true },(err, client) => {
     }
     console.log('Connected to MongoDB server');
     const db = client.db('TodoApp');
-    db.collection('Users').find({name: 'Josue'}).toArray().then((docs) => {
-        console.log('Users');
+    db.collection('Todos').find({}).toArray().then((docs) => {
+        console.log('Todos');
         console.log(JSON.stringify(docs, undefined, 2));
         }, (err) => {
         console.log('Unable to fetch todos', err);
         });
-    client.close();
+     client.close();
 });
